@@ -1,0 +1,441 @@
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+    <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <div class="d-flex flex-column flex-column-fluid">
+            <div id="kt_app_content" class="app-content">
+                <div id="kt_app_content_container" class="app-container container-fluid">
+
+                    <!-- PROFIL -->
+                    <div class="card mb-5 mb-xl-10">
+                        <div class="card-body pt-9 pb-0">
+                            <div class="d-flex flex-wrap flex-sm-nowrap">
+                                <div class="me-7 mb-4">
+                                    <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+                                        <img src="assets/img/profil/blank.png" alt="Avatar" />
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                        <div class="d-flex flex-column">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <span class="text-gray-900 fs-2 fw-bold me-2">Tom BRUAIRE</span>
+                                                <i class="bi bi-patch-check-fill fs-1 text-info"></i>
+                                            </div>
+                                            <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                                                <span class="d-flex align-items-center text-gray-900 me-5 mb-2">
+                                                    <i class="ki-outline ki-profile-circle fs-4 me-1 text-gray-900"></i>
+                                                    Client
+                                                </span>
+                                                <span class="d-flex align-items-center text-gray-900 mb-2">
+                                                    <i class="ki-outline ki-sms fs-4 me-2 text-gray-900"></i>
+                                                    tom@gmail.com
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-wrap flex-stack">
+                                        <div class="d-flex flex-column flex-grow-1 pe-8">
+                                            <div class="d-flex flex-wrap">
+                                                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <i class="ki-duotone ki-handcart fs-3 me-2 text-gray-900"></i>
+                                                        <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="3">0</div>
+                                                    </div>
+                                                    <div class="fw-semibold fs-6 text-gray-900">Achats</div>
+                                                </div>
+                                                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <i class="fa-solid fa-comment fs-3 me-2 text-gray-900"></i>
+                                                        <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="3">0</div>
+                                                    </div>
+                                                    <div class="fw-semibold fs-6 text-gray-900">Commentaires</div>
+                                                </div>
+                                                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <i class="fa-solid fa-star fs-3 me-2 text-gray-900"></i>
+                                                        <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="3">0</div>
+                                                    </div>
+                                                    <div class="fw-semibold fs-6 text-gray-900">Notations</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
+                                <li class="nav-item mt-2">
+                                    <a class="nav-link text-active-primary ms-0 me-10 py-5" routerLink="/profil">Informations</a>
+                                </li>
+                                <li class="nav-item mt-2">
+                                    <a class="nav-link text-active-primary ms-0 me-10 py-5" routerLink="/commandes">Commandes</a>
+                                </li>
+                                <li class="nav-item mt-2">
+                                    <a class="nav-link text-active-primary ms-0 me-10 py-5 active" routerLink="/envies">Envies</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-docs flex-row-fluid mb-2" id="kt_docs_content_card">
+                        <div class="card-body fs-6 py-15 px-10 py-lg-15 px-lg-15 text-gray-700">
+                            <!-- Catégories -->
+                            <ul class="nav nav-stretch nav-line-tabs fw-bold fs-4 border-bottom-2 border-transparent flex-nowrap mb-8" role="tablist" id="kt_illustration_tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2 active" data-bs-toggle="tab" href="#toutes" role="tab">Toutes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#envies-ps1" role="tab">PS1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#envies-ps2" role="tab">PS2</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#envies-ps3" role="tab">PS3</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#envies-ps4" role="tab">PS4</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#envies-ps5" role="tab">PS5</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#envies-wii" role="tab">Wii</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#envies-wii-u" role="tab">Wii U</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#envies-nintendo-3ds" role="tab">Nintendo 3DS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#envies-nintendo-switch" role="tab">Nintendo Switch</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#envies-xbox" role="tab">Xbox</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#envies-pc" role="tab">PC</a>
+                                </li>
+                            </ul>
+                            <!-- / Catégories -->
+                            
+                            <div class="tab-content">
+
+                                <!-- Catégorie : Toutes -->
+                                <div class="tab-pane fade show active" id="toutes">
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/XenobladeChroniclesXDefinitiveEdition.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/DonkeyKongCountryReturnsHD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/TheLegendofZeldaEchoesOfWisdom.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : Toutes -->
+                                
+                                <!-- Catégorie : PS1 -->
+                                <div class="tab-pane fade" id="envies-ps1">
+                                    <div class="mb-5">Liste des envies des jeux PS1</div>
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : PS1 -->
+
+                                <!-- Catégorie : PS2 -->
+                                <div class="tab-pane fade" id="envies-ps2">
+                                    <div class="mb-5">Liste des envies des jeux PS2</div>
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : PS2 -->
+
+                                <!-- Catégorie : PS3 -->
+                                <div class="tab-pane fade" id="envies-ps3">
+                                    <div class="mb-5">Liste des envies des jeux PS3</div>
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : PS3 -->
+
+                                <!-- Catégorie : PS4 -->
+                                <div class="tab-pane fade" id="envies-ps4">
+                                    <div class="mb-5">Liste des envies des jeux PS4</div>
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : PS4 -->
+
+                                <!-- Catégorie : PS5 -->
+                                <div class="tab-pane fade" id="envies-ps5">
+                                    <div class="mb-5">Liste des envies des jeux PS5</div>
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : PS5 -->
+
+                                <!-- Catégorie : Wii -->
+                                <div class="tab-pane fade" id="envies-wii">
+                                    <div class="mb-5">Liste des envies des jeux Wii</div>
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : Wii -->
+
+                                <!-- Catégorie : Wii U -->
+                                <div class="tab-pane fade" id="envies-wii-u">
+                                    <div class="mb-5">Liste des envies des jeux Wii U</div>
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : Wii U -->
+
+                                <!-- Catégorie : Nintendo 3DS -->
+                                <div class="tab-pane fade" id="envies-nintendo-3ds">
+                                    <div class="mb-5">Liste des envies des jeux Nintendo 3DS</div>
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : Nintendo 3DS -->
+
+                                <!-- Catégorie : Nintendo Switch -->
+                                <div class="tab-pane fade" id="envies-nintendo-switch">
+                                    <div class="mb-5">Liste des envies des jeux Nintendo Switch</div>
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : Nintendo Switch -->
+
+                                <!-- Catégorie : Xbox -->
+                                <div class="tab-pane fade" id="envies-xbox">
+                                    <div class="mb-5">Liste des envies des jeux Xbox</div>
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : Xbox -->
+
+                                <!-- Catégorie : PC -->
+                                <div class="tab-pane fade" id="envies-pc">
+                                    <div class="mb-5">Liste des envies des jeux PC</div>
+                                    <div class="row g-10">
+                                        <!-- Jeu -->
+                                        <div class="col-lg-3">
+                                            <div class="card overlay border">
+                                                <div class="card-body p-0">
+                                                    <div class="overlay-wrapper h-300px text-center">
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid" width="300" height="300" alt="Image">
+                                                    </div>
+                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
+                                                        <button class="py-2 px-4 btn btn-sm btn-primary">Ajouter au panier</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / Jeu -->
+                                    </div>
+                                </div>
+                                <!-- / Catégorie : PC -->
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

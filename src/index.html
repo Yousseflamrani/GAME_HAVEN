@@ -23,5 +23,24 @@
   <script src="assets/js/theme-mode.js"></script>
 	<script src="assets/plugins/global/plugins.bundle.js"></script>
 	<script src="assets/js/scripts.bundle.js"></script>
+  <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+	<script src="assets/js/custom/apps/ecommerce/catalog/products.js"></script>
+	<script src="assets/js/widgets.bundle.js"></script>
+	<script src="assets/js/custom/widgets.js"></script>
+  <script> 
+      /* Page : http://localhost:4200/paiement */
+      // Pattern : Numéro de carte
+      Inputmask({
+          "mask" : "9999 9999 9999 9999"
+      }).mask("#numero_carte");
+      // Pattern : Date d'expiration de la carte
+      Inputmask({
+          "mask" : "99/9999"
+      }).mask("#date_expiration");
+      // Pattern : CVC de la carte
+      Inputmask({
+          "mask" : "999"
+      }).mask("#cvc");
+  </script>
 </body>
 </html>

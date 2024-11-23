@@ -1,0 +1,157 @@
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+    <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <div class="d-flex flex-column flex-column-fluid">
+            <div id="kt_app_content" class="app-content">
+                <div id="kt_app_content_container" class="app-container container-fluid">
+
+                    <!-- PANIER -->
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-body p-lg-15">
+                                    <div class="mb-15">
+                                        <h4 class="fs-2x text-gray-800 w-bolder mb-6 text-center">Mon panier</h4>
+                                    </div>
+                                    <div class="table-responsive mb-5">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr class="fw-bold fs-6 text-gray-800">
+                                                    <th>Produit</th>
+                                                    <th>Quantité</th>
+                                                    <th>Prix</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <img src="assets/img/jeux/miniatures/nintendo/switch/LuigisMansion2HD.jpg" class="img-fluid rounded" width="60" height="60" alt="Image">
+                                                        <span class="ms-2 fs-4">Luigi's Mansion 2 HD</span>
+                                                    </td>
+                                                    <td>
+                                                        <select name="quantite" id="quantite" class="form-select">
+                                                            <option value="1" selected>1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="fw-bold fs-4">69,99 €</td>
+                                                    <td>
+                                                        <div class="row d-flex justify-content-center mt-3">
+                                                            <div class="col-auto">
+                                                                <button type="button" class="btn btn-danger" data-bs-stacked-modal="#kt_modal_delete_product">Supprimer</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-danger me-2" data-bs-stacked-modal="#kt_modal_clear_panier">Vider le panier</button>
+                                            <button type="button" class="btn btn-success" data-bs-stacked-modal="#kt_modal_validate_panier">Valider et payer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / PANIER -->
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- MODAL : Suppression d'un produit du panier -->
+<div class="modal fade" id="kt_modal_delete_product" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Suppression d'un produit du panier</h3>
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="ki-duotone ki-cross fs-1">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                    </i>
+                </div>
+            </div>
+            <form method="post" action="">
+                <div class="modal-body">
+                    <span class="fs-4 text-gray-900">Supprimer <b>Luigi's Mansion 2</b> du panier ?</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Oui</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- / MODAL : Suppression d'un produit du panier -->
+
+<!-- MODAL : Vider le panier -->
+<div class="modal fade" id="kt_modal_clear_panier" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Vider le panier</h3>
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="ki-duotone ki-cross fs-1">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                    </i>
+                </div>
+            </div>
+            <form method="post" action="">
+                <div class="modal-body">
+                    <span class="fs-4 text-gray-900">Voulez-vous vraiment vider panier ?</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Vider le panier</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- / MODAL : Vider le panier -->
+
+<!-- MODAL : Valider et payer -->
+<div class="modal fade" id="kt_modal_validate_panier" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Validation du panier et paiement</h3>
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="ki-duotone ki-cross fs-1">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                    </i>
+                </div>
+            </div>
+            <form method="post" action="">
+                <div class="modal-body">
+                    <span class="fs-4 text-gray-900">Voulez-vous procéder au paiment ?</span>
+                </div>
+                <div class="modal-footer">
+                    <a routerLink="/paiement" class="btn btn-success">Oui</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- / MODAL : Valider et payer -->

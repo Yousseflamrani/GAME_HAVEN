@@ -1,0 +1,64 @@
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+    <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <div class="d-flex flex-column flex-column-fluid">
+            <div id="kt_app_content" class="app-content">
+                <div id="kt_app_content_container" class="app-container container-fluid">
+
+                    <!-- PAIEMENT -->
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body p-lg-15">
+                                    <div class="mb-15">
+                                        <h4 class="fs-2x text-gray-800 w-bolder mb-6 text-center">Informations de paiement</h4>
+                                    </div>
+                                    <form method="post" action="">
+                                        <div class="form-floating mb-8">
+                                            <input type="text" name="numero_carte" id="numero_carte" placeholder="Numéro de carte" class="form-control bg-transparent" />
+                                            <label for="numero_carte">Numéro de carte</label>
+                                        </div>
+                                        <div class="row mb-10">
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-8">
+                                                    <input type="text" name="date_expiration" id="date_expiration" placeholder="Date d'expiration" class="form-control bg-transparent" />
+                                                    <label for="date_expiration">Date d'expiration</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-8">
+                                                    <input type="text" name="cvc" id="cvc" placeholder="CVC" class="form-control bg-transparent" />
+                                                    <label for="cvc">CVC</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex justify-content-center mb-10">
+                                            <div class="col-md-12">
+                                                <div class="alert alert-warning" role="alert">
+                                                    <h4><u>Récapitulatif de la commande</u></h4>
+                                                    <p class="fs-4 text-gray-900">1 jeu :</p>
+                                                    <ul class="fs-4 text-gray-900">
+                                                        <li class="mb-3">Luigi's Mansion 2 HD (69,99 €)</li>
+                                                    </ul>
+                                                    <hr>
+                                                    <h4><u>Montant total TTC</u> : 69,99 €</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-primary" data-bs-stacked-modal="#kt_modal_confirm_payment">Payer</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / PAIEMENT -->
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
