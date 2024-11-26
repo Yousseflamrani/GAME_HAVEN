@@ -25,6 +25,9 @@ import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.co
 import { PolitiqueDeConfidentialiteComponent } from './politique-de-confidentialite/politique-de-confidentialite.component';
 import { JeuComponent } from './jeu/jeu.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,11 +51,13 @@ import { JeuComponent } from './jeu/jeu.component';
     CookiesComponent,
     MentionsLegalesComponent,
     PolitiqueDeConfidentialiteComponent,
-    JeuComponent
+    JeuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

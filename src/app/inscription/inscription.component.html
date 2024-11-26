@@ -1,104 +1,135 @@
 <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
-    <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-        <div class="d-flex flex-column flex-column-fluid">
-            <div id="kt_app_content" class="app-content">
-                <div id="kt_app_content_container" class="app-container container-fluid">
+  <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+    <div class="d-flex flex-column flex-column-fluid">
+      <div id="kt_app_content" class="app-content">
+        <div id="kt_app_content_container" class="app-container container-fluid">
 
-                    <!-- FORMULAIRE D'INSCRIPTION -->
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-5">
-                            <div class="card">
-                                <div class="card-body p-lg-15">
-                                    <div>
-                                        <div class="mb-15">
-                                            <h4 class="fs-2x text-gray-800 w-bolder mb-6 text-center">Inscription</h4>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12 pe-md-10 mb-md-0">
-                                                <form method="post" action="" class="form w-100" novalidate="novalidate">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-floating mb-8">
-                                                                <input type="text" name="prenom" id="prenom" placeholder="Prénom" class="form-control bg-transparent" />
-                                                                <label for="prenom">Prénom</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-floating mb-8">
-                                                                <input type="text" name="nom" id="nom" placeholder="NOM" class="form-control bg-transparent" />
-                                                                <label for="nom">NOM</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-floating mb-8">
-                                                        <input type="email" name="email" id="email" placeholder="Adresse email" class="form-control bg-transparent" />
-                                                        <label for="email">Adresse email</label>
-                                                    </div>
-                                                    <div class="fv-row mb-3" data-kt-password-meter="true">
-                                                        <label for="password" class="form-label fw-semibold fs-6 mb-2">Mot de passe</label>
-                                                        <div class="position-relative mb-3">
-                                                            <input type="password" name="password" id="password" class="form-control form-control-lg form-control-solid" />
-                                                            <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
-                                                                <i class="ki-duotone ki-eye-slash fs-1">
-                                                                    <span class="path1"></span>
-                                                                    <span class="path2"></span>
-                                                                    <span class="path3"></span>
-                                                                    <span class="path4"></span>
-                                                                </i>
-                                                                <i class="ki-duotone ki-eye d-none fs-1">
-                                                                    <span class="path1"></span>
-                                                                    <span class="path2"></span>
-                                                                    <span class="path3"></span>
-                                                                </i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="fv-row mb-8" data-kt-password-meter="true">
-                                                        <label for="password2" class="form-label fw-semibold fs-6 mb-2">Confirmation du mot de passe</label>
-                                                        <div class="position-relative mb-3">
-                                                            <input type="password" name="password2" id="password2" class="form-control form-control-lg form-control-solid" />
-                                                            <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
-                                                                <i class="ki-duotone ki-eye-slash fs-1">
-                                                                    <span class="path1"></span>
-                                                                    <span class="path2"></span>
-                                                                    <span class="path3"></span>
-                                                                    <span class="path4"></span>
-                                                                </i>
-                                                                <i class="ki-duotone ki-eye d-none fs-1">
-                                                                    <span class="path1"></span>
-                                                                    <span class="path2"></span>
-                                                                    <span class="path3"></span>
-                                                                </i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-floating mb-8">
-                                                        <select name="type_user" id="type_user" class="form-select">
-                                                            <option value="client">Client</option>
-                                                            <option value="vendeur">Vendeur</option>
-                                                            <option value="sponsor">Sponsor</option>
-                                                            <option value="partenaire">Partenaire</option>
-                                                        </select>
-                                                        <label for="type_user">Je suis</label>
-                                                    </div>
-                                                    <div class="row d-flex justify-content-center">
-                                                        <div class="col-auto">
-                                                            <button type="submit" class="btn btn-success">Créer un compte</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+          <!-- FORMULAIRE D'INSCRIPTION -->
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+              <div class="card">
+                <div class="card-body p-lg-15">
+                  <div>
+                    <div class="mb-15">
+                      <h4 class="fs-2x text-gray-800 w-bolder mb-6 text-center">Inscription</h4>
                     </div>
-                    <!-- / FORMULAIRE D'INSCRIPTION -->
-
+                    <div class="row">
+                      <div class="col-md-12 pe-md-10 mb-md-0">
+                        <!-- Formulaire Angular -->
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form w-100" novalidate>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-floating mb-8">
+                                <input
+                                  type="text"
+                                  id="prenom"
+                                  formControlName="prenom"
+                                  placeholder="Prénom"
+                                  class="form-control bg-transparent"
+                                />
+                                <label for="prenom">Prénom</label>
+                                <small *ngIf="registerForm.get('prenom')?.invalid && registerForm.get('prenom')?.touched" class="text-danger">
+                                  Le prénom est obligatoire.
+                                </small>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-floating mb-8">
+                                <input
+                                  type="text"
+                                  id="nom"
+                                  formControlName="nom"
+                                  placeholder="Nom"
+                                  class="form-control bg-transparent"
+                                />
+                                <label for="nom">Nom</label>
+                                <small *ngIf="registerForm.get('nom')?.invalid && registerForm.get('nom')?.touched" class="text-danger">
+                                  Le nom est obligatoire.
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-floating mb-8">
+                            <input
+                              type="email"
+                              id="email"
+                              formControlName="email"
+                              placeholder="Adresse email"
+                              class="form-control bg-transparent"
+                            />
+                            <label for="email">Adresse email</label>
+                            <small *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
+                              Une adresse email valide est requise.
+                            </small>
+                          </div>
+                          <div class="fv-row mb-3">
+                            <label for="mdp" class="form-label fw-semibold fs-6 mb-2">Mot de passe</label>
+                            <input
+                              type="password"
+                              id="mdp"
+                              formControlName="mdp"
+                              class="form-control form-control-lg form-control-solid"
+                            />
+                            <small *ngIf="registerForm.get('mdp')?.invalid && registerForm.get('mdp')?.touched" class="text-danger">
+                              Le mot de passe doit comporter au moins 6 caractères.
+                            </small>
+                          </div>
+                          <div class="fv-row mb-3">
+                            <label for="confirmPassword" class="form-label fw-semibold fs-6 mb-2">Confirmer le mot de passe</label>
+                            <input
+                              type="password"
+                              id="confirmPassword"
+                              formControlName="confirmPassword"
+                              class="form-control form-control-lg form-control-solid"
+                            />
+                            <small *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirmPassword')?.touched" class="text-danger">
+                              Les mots de passe ne correspondent pas.
+                            </small>
+                          </div>
+                          <div class="form-floating mb-8">
+                            <select id="type_user" formControlName="type_user" class="form-select">
+                              <option value="CLIENT">Client</option>
+                              <option value="VENDEUR">Vendeur</option>
+                              <option value="SPONSOR">Sponsor</option>
+                              <option value="PARTENAIRE">Partenaire</option>
+                            </select>
+                            <label for="type_user">Je suis</label>
+                          </div>
+                          <div class="form-floating mb-8">
+                            <input
+                              type="text"
+                              id="adresse"
+                              formControlName="adresse"
+                              placeholder="Adresse"
+                              class="form-control bg-transparent"
+                            />
+                            <label for="adresse">Adresse</label>
+                            <small *ngIf="registerForm.get('adresse')?.invalid && registerForm.get('adresse')?.touched" class="text-danger">
+                              L'adresse est obligatoire.
+                            </small>
+                          </div>
+                          <div class="row d-flex justify-content-center">
+                            <div class="col-auto">
+                              <button type="submit" class="btn btn-success" [disabled]="!registerForm.valid">
+                                Créer un compte
+                              </button>
+                            </div>
+                          </div>
+                          <div *ngIf="successMessage" class="alert alert-success mt-4">{{ successMessage }}</div>
+                          <div *ngIf="errorMessage" class="alert alert-danger mt-4">{{ errorMessage }}</div>
+                        </form>
+                        <!-- / Formulaire Angular -->
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
+          <!-- / FORMULAIRE D'INSCRIPTION -->
+
         </div>
-        
+      </div>
     </div>
+  </div>
 </div>
