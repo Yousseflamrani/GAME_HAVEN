@@ -10,10 +10,16 @@ export class JeuxService {
 
   constructor(private http: HttpClient) {}
 
-  getJeux(page: number, size: number): Observable<any> {
-    const params = new HttpParams()
+  getJeux(page: number, size: number, searchTerm: string | null = null): Observable<any> {
+    let params: HttpParams = new HttpParams()
       .set('page', page.toString())
       .set('size', size.toString());
+
+    if (searchTerm) {
+      params = params.set('searchTerm', searchTerm);
+    }
+
     return this.http.get<any>(`${this.apiUrl}/pageable`, { params });
   }
+
 }
