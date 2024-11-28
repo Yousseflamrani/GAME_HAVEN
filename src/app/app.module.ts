@@ -23,10 +23,12 @@ import { CgvComponent } from './cgv/cgv.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
 import { PolitiqueDeConfidentialiteComponent } from './politique-de-confidentialite/politique-de-confidentialite.component';
-import { JeuComponent } from './jeu/jeu.component';
+import { JeuComponent } from './jeu/jeu.component'
 
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CommonModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
