@@ -1,0 +1,137 @@
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+  <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+    <div class="d-flex flex-column flex-column-fluid">
+      <div id="kt_app_content" class="app-content">
+        <div id="kt_app_content_container" class="app-container container-fluid">
+          <!-- FORMULAIRE DE CRÉATION DE JEU -->
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+              <div class="card">
+                <div class="card-body p-lg-15">
+                  <div>
+                    <div class="mb-15">
+                      <h4 class="fs-2x text-gray-800 w-bolder mb-6 text-center">Ajouter un jeu</h4>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 pe-md-10 mb-md-0">
+                        <!-- Formulaire Angular -->
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form w-100" novalidate>
+                          <div class="form-floating mb-8">
+                            <input
+                              type="text"
+                              id="nom"
+                              formControlName="nom"
+                              placeholder="Nom du Jeu"
+                              class="form-control bg-transparent"
+                            />
+                            <label for="nom">Nom du Jeu</label>
+                            <small *ngIf="registerForm.get('nom')?.invalid && registerForm.get('nom')?.touched" class="text-danger">
+                              Le nom est obligatoire.
+                            </small>
+                          </div>
+
+                          <div class="form-floating mb-8">
+                            <input
+                              type="text"
+                              id="image"
+                              formControlName="image"
+                              placeholder="URL de l'image"
+                              class="form-control bg-transparent"
+                            />
+                            <label for="image">URL de l'image</label>
+                            <small *ngIf="registerForm.get('image')?.invalid && registerForm.get('image')?.touched" class="text-danger">
+                              Une URL valide est requise.
+                            </small>
+                          </div>
+
+                          <div class="form-floating mb-8">
+                            <textarea
+                              id="description"
+                              formControlName="description"
+                              placeholder="Description"
+                              class="form-control bg-transparent"
+                              style="height: 100px"
+                            ></textarea>
+                            <label for="description">Description</label>
+                          </div>
+
+                          <div class="form-floating mb-8">
+                            <input
+                              type="number"
+                              id="prix"
+                              formControlName="prix"
+                              placeholder="Prix"
+                              class="form-control bg-transparent"
+                            />
+                            <label for="prix">Prix</label>
+                            <small *ngIf="registerForm.get('prix')?.invalid && registerForm.get('prix')?.touched" class="text-danger">
+                              Un prix valide est obligatoire.
+                            </small>
+                          </div>
+
+                          <div class="form-floating mb-8">
+                            <input
+                              type="number"
+                              id="quantite"
+                              formControlName="quantite"
+                              placeholder="Quantité"
+                              class="form-control bg-transparent"
+                            />
+                            <label for="quantite">Quantité</label>
+                          </div>
+
+                          <div class="form-floating mb-8">
+                            <select id="etat" formControlName="etat" class="form-select">
+                              <option *ngFor="let etat of etats" [value]="etat">{{ etat }}</option>
+                            </select>
+                            <label for="etat">État</label>
+                          </div>
+
+                          <div class="form-floating mb-8">
+                            <input
+                              type="number"
+                              id="note"
+                              formControlName="note"
+                              placeholder="Note"
+                              step="0.1"
+                              class="form-control bg-transparent"
+                            />
+                            <label for="note">Note</label>
+                          </div>
+
+                          <div class="form-floating mb-8">
+                            <select id="category" formControlName="category" class="form-select">
+                              <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+                            </select>
+                            <label for="category">Catégorie</label>
+                          </div>
+
+                          <div class="row d-flex justify-content-center">
+                            <div class="col-auto">
+                              <button type="submit" class="btn btn-success" [disabled]="!registerForm.valid">
+                                Poster le jeu
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                        <!-- / Formulaire Angular -->
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    *ngIf="successMessage"
+                    class="alert alert-success mt-4"
+                    [style.display]="'block'"
+                  >
+                    {{ successMessage }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / FORMULAIRE DE CRÉATION DE JEU -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
