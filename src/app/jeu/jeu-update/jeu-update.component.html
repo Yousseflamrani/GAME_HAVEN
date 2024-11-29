@@ -1,1 +1,152 @@
-<p>jeu-update works!</p>
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper" *ngIf="jeu">
+  <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+    <div class="d-flex flex-column flex-column-fluid">
+      <div id="kt_app_toolbar" class="app-toolbar pt-10 mb-10">
+        <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+          <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
+            <div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
+              <h1 class="page-heading d-flex flex-column justify-content-center text-gray-900 fw-bold fs-3 m-0">
+                Modifier le Jeu : {{ jeu?.nom }}
+              </h1>
+              <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
+                <li class="breadcrumb-item text-muted">Jeux</li>
+                <li class="breadcrumb-item text-muted">{{ jeu?.category }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="kt_app_content" class="app-content app-content-stretch">
+        <div id="kt_app_content_container" class="app-container container-fluid">
+          <form class="form d-flex flex-column gap-7 gap-lg-10" (ngSubmit)="saveChanges()">
+            <div class="card card-flush py-4">
+              <div class="card-header">
+                <h2 class="fw-bold">Informations générales</h2>
+              </div>
+              <div class="card-body pt-0">
+                <div class="mb-10">
+                  <label for="nom" class="form-label fw-bold">Nom du jeu</label>
+                  <input
+                    id="nom"
+                    type="text"
+                    class="form-control form-control-solid"
+                    [(ngModel)]="jeu.nom"
+                    name="nom"
+                    placeholder="Entrez le nom du jeu"
+                  />
+                </div>
+                <div class="mb-10">
+                  <label for="category" class="form-label fw-bold">Catégorie</label>
+                  <select
+                    id="category"
+                    class="form-select form-select-solid"
+                    [(ngModel)]="jeu.category"
+                    name="category"
+                  >
+                    <option *ngFor="let category of categories" [value]="category">
+                      {{ category }}
+                    </option>
+                  </select>
+                </div>
+                <div class="mb-10">
+                  <label for="etat" class="form-label fw-bold">État</label>
+                  <select
+                    id="etat"
+                    class="form-select form-select-solid"
+                    [(ngModel)]="jeu.etat"
+                    name="etat"
+                  >
+                    <option *ngFor="let etat of etats" [value]="etat">
+                      {{ etat }}
+                    </option>
+                  </select>
+                </div>
+                <div class="mb-10">
+                  <label for="reference" class="form-label fw-bold">Référence</label>
+                  <input
+                    id="reference"
+                    type="text"
+                    class="form-control form-control-solid"
+                    [(ngModel)]="jeu.reference"
+                    name="reference"
+                    disabled
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="card card-flush py-4">
+              <div class="card-header">
+                <h2 class="fw-bold">Détails</h2>
+              </div>
+              <div class="card-body pt-0">
+                <div class="mb-10">
+                  <label for="description" class="form-label fw-bold">Description</label>
+                  <textarea
+                    id="description"
+                    rows="5"
+                    class="form-control form-control-solid"
+                    [(ngModel)]="jeu.description"
+                    name="description"
+                    placeholder="Entrez une description pour le jeu"
+                  ></textarea>
+                </div>
+                <div class="mb-10">
+                  <label for="prix" class="form-label fw-bold">Prix (€)</label>
+                  <input
+                    id="prix"
+                    type="number"
+                    step="0.01"
+                    class="form-control form-control-solid"
+                    [(ngModel)]="jeu.prix"
+                    name="prix"
+                  />
+                </div>
+                <div class="mb-10">
+                  <label for="quantite" class="form-label fw-bold">Stock</label>
+                  <input
+                    id="quantite"
+                    type="number"
+                    class="form-control form-control-solid"
+                    [(ngModel)]="jeu.quantite"
+                    name="quantite"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="card card-flush py-4">
+              <div class="card-header">
+                <h2 class="fw-bold">Image</h2>
+              </div>
+              <div class="card-body pt-0">
+                <div class="mb-10 text-center">
+                  <img
+                    [src]="jeu.image"
+                    alt="Image du jeu"
+                    class="img-thumbnail mb-5"
+                    style="max-width: 200px; max-height: 200px;"
+                  />
+                  <input
+                    id="image"
+                    type="text"
+                    class="form-control form-control-solid"
+                    [(ngModel)]="jeu.image"
+                    name="image"
+                    placeholder="Entrez l'URL de l'image"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end gap-5">
+              <button type="button" class="btn btn-light btn-flex btn-center" (click)="cancel()">
+                Annuler
+              </button>
+              <button type="submit" class="btn btn-primary btn-flex btn-center">
+                Enregistrer les modifications
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

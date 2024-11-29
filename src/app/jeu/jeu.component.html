@@ -15,7 +15,10 @@
             <div class="card-body pt-0">
               <div class="header-show row d-flex">
                 <div class="col-auto">
-                  <button class="btn btn-primary btn-flex btn-center active">Modifier le jeu</button>
+                  <button class="btn btn-primary btn-flex btn-center active" [routerLink]="'/jeux/' + jeu.reference + '/edit'">Modifier le jeu</button>
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary btn-flex btn-center active" (click)="deleteJeu()">Supprimer le jeu</button>
                 </div>
               </div>
             </div>

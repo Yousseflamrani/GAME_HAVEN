@@ -2,10 +2,7 @@ export interface Jeux {
   id: number;
   nom: string;
   reference: number;
-  category: {
-    id: number;
-    name: string;
-  };
+  "category": string;
   image: string;
   description: string;
   prix: number;

@@ -14,10 +14,11 @@
                   (input)="onSearchChange()"
                   class="form-control form-control-solid w-250px ps-12"
                 />
-                <div>
-                  <button class="add-jeux menu-filter btn btn-sm btn-light btn-flex btn-center btn-active-light-primary">Ajouter un jeux</button>
-                  
-                </div>
+                  <div class="header-show row d-flex">
+                    <div class="col-auto">
+                      <button class="menu-filter add-jeux btn btn-primary btn-flex btn-center active" [routerLink]="'jeux/create'">Ajouter un jeu</button>
+                    </div>
+                  </div>
               </div>
             </div>
 
@@ -48,13 +49,61 @@
                     <td colspan="5" class="text-center">Aucun jeu trouvé.</td>
                   </tr>
                   <tr *ngFor="let jeu of filteredJeux">
-                    <td class="min-w-500px">{{ jeu.nom }}</td>
-                    <td class="text-center min-w-150px">{{ jeu.category.name }}</td>
-                    <td class="text-center min-w-150px">{{ jeu.reference }}</td>
-                    <td class="text-center min-w-150px">{{ jeu.etat }}</td>
-                    <td class="text-center min-w-150px">{{ jeu.prix }}€</td>
-                    <td class="text-center min-w-150px">{{ jeu.note }}</td>
-                    <td class="text-center min-w-150px">{{ jeu.quantite }}</td>
+                  <tr *ngFor="let jeu of filteredJeux">
+                    <td>
+                      <a
+                        [routerLink]="'/jeu/' + jeu.reference + '/show'"
+                        class="d-flex align-items-center text-decoration-none text-reset p-3"
+                      >
+                        <div class="d-flex align-items-center">
+                          <!-- Lien avec image miniature -->
+                          <p class="symbol symbol-50px">
+                            <span class="symbol-label"
+                                  [style.backgroundImage]="'url(' + jeu.image + ')'"
+                                  [style.backgroundSize]="'cover'"
+                                  [style.backgroundPosition]="'center center'">
+
+                            </span>
+                          </p>
+                          <!-- Nom du jeu avec lien -->
+                          <div class="ms-5">
+                            <a [routerLink]="'/jeu/' + jeu.id" class="text-gray-800 text-hover-primary fs-5 fw-bold">
+                              {{ jeu.nom }}
+                            </a>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="text-center min-w-150px">
+                      <a [routerLink]="'/jeu/' + jeu.reference + '/show'" class="d-flex align-items-center text-decoration-none text-reset p-3">
+                        {{ jeu.category }}
+                      </a>
+                    </td>
+                    <td class="text-center min-w-150px">
+                      <a [routerLink]="'/jeu/' + jeu.reference + '/show'" class="d-flex align-items-center text-decoration-none text-reset p-3">
+                        {{ jeu.reference }}
+                      </a>
+                    </td>
+                    <td class="text-center min-w-150px">
+                      <a [routerLink]="'/jeu/' + jeu.reference + '/show'" class="d-flex align-items-center text-decoration-none text-reset p-3">
+                        {{ jeu.etat }}
+                      </a>
+                    </td>
+                    <td class="text-center min-w-150px">
+                      <a [routerLink]="'/jeu/' + jeu.reference + '/show'" class="d-flex align-items-center text-decoration-none text-reset p-3">
+                        {{ jeu.prix }}€
+                      </a>
+                    </td>
+                    <td class="text-center min-w-150px">
+                      <a [routerLink]="'/jeu/' + jeu.reference + '/show'" class="d-flex align-items-center text-decoration-none text-reset p-3">
+                        {{ jeu.note }}
+                      </a>
+                    </td>
+                    <td class="text-center min-w-150px">
+                      <a [routerLink]="'/jeu/' + jeu.reference + '/show'" class="d-flex align-items-center text-decoration-none text-reset p-3">
+                        {{ jeu.quantite }}
+                      </a>
+                    </td>
                     <td class="text-center min-w-150px">
                       <button class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary">Ajouter au panier</button>
                     </td>

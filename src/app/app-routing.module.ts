@@ -20,6 +20,8 @@ import { CookiesComponent } from './cookies/cookies.component';
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
 import { PolitiqueDeConfidentialiteComponent } from './politique-de-confidentialite/politique-de-confidentialite.component';
 import { JeuComponent } from './jeu/jeu.component';
+import { JeuCreateComponent } from './jeu/jeu-create/jeu-create.component';
+import { JeuUpdateComponent } from './jeu/jeu-update/jeu-update.component';
 
 const routes: Routes = [
   {
@@ -95,8 +97,16 @@ const routes: Routes = [
     component: CookiesComponent
   },
   {
-    path: 'jeu/:id/show',
+    path: 'jeu/:reference/show',
     component: JeuComponent
+  },
+  {
+    path: 'jeux/create',
+    component: JeuCreateComponent,
+  },
+  {
+    path: 'jeux/:reference/edit',
+    component: JeuUpdateComponent,
   }
 ];
 

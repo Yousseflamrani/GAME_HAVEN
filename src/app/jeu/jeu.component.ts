@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JeuxService } from '../core/jeux.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class JeuComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private jeuxService: JeuxService
   ) {}
 
@@ -24,6 +25,21 @@ export class JeuComponent implements OnInit {
         },
         (error) => {
           console.error('Erreur lors du chargement des informations du jeu :', error);
+        }
+      );
+    }
+  }
+
+  deleteJeu(): void {
+    if (confirm('Êtes-vous sûr de vouloir supprimer ce jeu ?')) {
+      this.jeuxService.deleteJeuByReference(this.jeu.reference).subscribe(
+        () => {
+          alert('Jeu supprimé avec succès.');
+          this.router.navigate(['/']);
+        },
+        (error) => {
+          console.error('Erreur lors de la suppression du jeu :', error);
+          alert('Une erreur est survenue lors de la suppression.');
         }
       );
     }
