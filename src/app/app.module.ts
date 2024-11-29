@@ -30,7 +30,7 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { JeuCreateComponent } from './jeu/jeu-create/jeu-create.component';
 import { JeuUpdateComponent } from './jeu/jeu-update/jeu-update.component';
-
+import { AvisComponent } from './avis/avis.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +58,7 @@ import { JeuUpdateComponent } from './jeu/jeu-update/jeu-update.component';
     JeuComponent,
     JeuCreateComponent,
     JeuUpdateComponent,
+    AvisComponent
   ],
   imports: [
     BrowserModule,

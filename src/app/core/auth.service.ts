@@ -1,6 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
+// @ts-ignore
+import jwt_decode from 'jwt-decode'
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +41,31 @@ export class AuthService {
     });
   }
 
+  setAuthData(token: string, user: any): void {
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  getUser(): any | null {
+    const user = localStorage.getItem('user');
+    return user ? JSON.parse(user) : null;
+  }
+
+  getUserId(): number | null {
+    const user = localStorage.getItem('user');
+    if (!user) {
+      return null;
+    }
+    try {
+      const parsedUser = JSON.parse(user);
+      return parsedUser.id || null;
+    } catch (error) {
+      console.error('Erreur lors de la récupération de l\'utilisateur depuis localStorage:', error);
+      return null;
+    }
+  } 
+
+
   logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -49,4 +76,6 @@ export class AuthService {
     });
     this.isAuthenticatedSubject.next(false)
   }
+
 }
+
