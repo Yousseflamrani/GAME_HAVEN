@@ -58,7 +58,7 @@ import { AvisComponent } from './avis/avis.component';
     JeuComponent,
     JeuCreateComponent,
     JeuUpdateComponent,
-    AvisComponent
+    AvisComponent,
   ],
   imports: [
     BrowserModule,

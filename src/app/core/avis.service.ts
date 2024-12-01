@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Avis } from './model/avis.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +15,8 @@ export class AvisService {
     return this.http.get<any>(`${this.apiUrl}/jeu/${reference}/pageable?page=${page}&size=${size}`);
   }
 
-  createAvis(contenu: string, userId: number, jeuId: number): Observable<any> {
-    const body = {
-      contenu: contenu,
-      user: { id: userId },
-      jeux: { id: jeuId },
-    };
-    return this.http.post(`${this.apiUrl}/create`, body);
+  createAvis(avisPayload: { contenu: string; userId: number; jeu: { reference: number } }): Observable<Avis> {
+    console.log('Payload envoyé au backend depuis le avis:', avisPayload);
+    return this.http.post<Avis>(`${this.apiUrl}/create`, avisPayload);
   }
 }
